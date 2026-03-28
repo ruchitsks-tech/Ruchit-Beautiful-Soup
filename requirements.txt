@@ -1,0 +1,13 @@
+# BSE Earnings Call Transcript Scraper — Dependencies
+# Install with: pip install -r requirements.txt
+
+# HTML parsing
+beautifulsoup4==4.12.3
+lxml==5.2.2
+
+# Browser automation (JavaScript-rendered pages)
+selenium==4.21.0
+webdriver-manager==4.0.1
+
+# HTTP downloads
+requests==2.32.2
