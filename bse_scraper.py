@@ -7,8 +7,8 @@ Usage:
 
 Requirements:
     pip install -r requirements.txt
-    ChromeDriver must match your installed Chrome version, OR
-    webdriver-manager handles it automatically.
+    Selenium Manager (bundled with Selenium 4.6+) auto-downloads
+    the correct ChromeDriver for your OS — no manual setup needed.
 """
 
 import os
@@ -19,11 +19,9 @@ from urllib.parse import urljoin
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 
 
@@ -69,8 +67,9 @@ def build_driver() -> webdriver.Chrome:
         "Chrome/124.0.0.0 Safari/537.36"
     )
 
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service, options=options)
+    # Selenium Manager (built into Selenium 4.6+) automatically downloads
+    # the correct ChromeDriver for the current OS — no webdriver-manager needed.
+    driver = webdriver.Chrome(options=options)
     return driver
 
 
