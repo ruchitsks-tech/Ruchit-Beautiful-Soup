@@ -220,11 +220,11 @@ def main():
                 "Inspect the page and update 'category_ids' in the script."
             )
 
-        time.sleep(1)  # allow sub-category dropdown to populate
+        time.sleep(3)  # wait for AngularJS to populate sub-category options
 
         # ── Select Sub-Category ──────────────────────────────────────────────
         print("[3] Selecting Sub-Category …")
-        subcategory_ids = ["ddlsubcategory", "SubCategory", "ddlSubCategory", "ddlSubPeriod"]
+        subcategory_ids = ["ddlsubcat", "ddlsubcategory", "SubCategory", "ddlSubCategory", "ddlSubPeriod"]
         subcat_selected = False
         for sid in subcategory_ids:
             try:
