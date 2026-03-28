@@ -106,7 +106,7 @@ def fetch_pdf_links(driver: webdriver.Chrome) -> list[dict]:
     Parse the results table with BeautifulSoup and return a list of dicts:
         [{"company": str, "date": str, "subject": str, "pdf_url": str}, ...]
     """
-    soup = BeautifulSoup(driver.page_source, "lxml")
+    soup = BeautifulSoup(driver.page_source, "html.parser")
 
     records = []
 

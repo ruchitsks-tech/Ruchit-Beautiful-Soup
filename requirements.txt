@@ -1,9 +1,8 @@
 # BSE Earnings Call Transcript Scraper — Dependencies
 # Install with: pip install -r requirements.txt
 
-# HTML parsing
+# HTML parsing (html.parser is built into Python — no lxml needed)
 beautifulsoup4==4.12.3
-lxml==5.2.2
 
 # Browser automation (JavaScript-rendered pages)
 selenium==4.21.0
